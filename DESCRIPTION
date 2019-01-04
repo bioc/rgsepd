@@ -1,7 +1,7 @@
 Package: rgsepd
 Type: Package
 Title: Gene Set Enrichment / Projection Displays
-Version: 1.14.0
+Version: 1.14.1
 Date: 2018-04-20
 Author: Karl Stamm
 Maintainer: Karl Stamm <karl.stamm@gmail.com>
@@ -16,5 +16,5 @@ Imports: gplots, biomaRt, org.Hs.eg.db, GO.db, SummarizedExperiment, hash,
         AnnotationDbi
 Suggests: boot, tools, BiocGenerics, knitr, xtable
 License: GPL-3
-biocViews: Software, DifferentialExpression, GeneSetEnrichment, RNASeq
+biocViews: ImmunoOncology, Software, DifferentialExpression, GeneSetEnrichment, RNASeq
 VignetteBuilder: knitr
