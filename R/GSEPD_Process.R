@@ -83,8 +83,8 @@ MergeResultsTables <- function(G){
   Limit_GO  <- ifelse(G$LIMIT$HARD , G$LIMIT$GO_PVAL , max(c(median(GO$over_represented_pvalue) , G$LIMIT$GO_PVAL)) )
   Limit_Seg <- ifelse(G$LIMIT$HARD , G$LIMIT$Seg_P   , max(c(median(SEG$Segregation_PV) , G$LIMIT$Seg_P)))
   
-  OM<-merge( subset(GO, GO$over_represented_pvalue < Limit_GO),
-             subset(SEG,SEG$Segregation_PV < Limit_Seg), by.x="category", by.y="row.names")
+  OM<-merge( subset(GO, GO$over_represented_pvalue <= Limit_GO),
+             subset(SEG,SEG$Segregation_PV <= Limit_Seg), by.x="category", by.y="row.names")
   write.csv(OM,GSEPD_HMACSV_File(G));  
   
 }

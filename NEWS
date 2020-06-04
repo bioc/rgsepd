@@ -1,6 +1,12 @@
 CHANGES IN VERSION 1.15
 --------------------------
 
+ - changed some less than to leq so we guarantee results.
+ - biomart accession for entrezgene spelling changed some time recently.
+
+CHANGES IN VERSION 1.15
+--------------------------
+
  - new legends in scatterplots.
  - custom point colors in PCA plot function. uses sampleMeta$CustomColor and disables the built in legend.
  - custom genes in plots. See ExtractProjection() very useful, not yet in vignette - it calculates a projection among your custom gene set. 
