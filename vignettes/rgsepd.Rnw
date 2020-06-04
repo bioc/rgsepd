@@ -103,14 +103,14 @@ print.xtable(xT, scalebox=0.75)
 xtable(T2, caption ="First few rows of the included IlluminaBodymapMeta dataset. See \\texttt{?IlluminaBodymapMeta} for more details. These are easy to build with a spreadsheet, saved to csv and R's builtin \\texttt{?read.csv}", label = 'MyT2')
 @
 
-Next we'll sub-select $2,000$ genes from this set for speed.  Initialize the GSEPD object with the \tt GSEPD\_INIT \rm function. Finally, to indicate which conditions will be tested as this dataset includes samples from `condition' A, B, and C, we use \tt GSEPD\_ChangeConditions\rm.
+Next we'll sub-select $5,000$ genes from this set for speed.  Initialize the GSEPD object with the \tt GSEPD\_INIT \rm function. Finally, to indicate which conditions will be tested as this dataset includes samples from `condition' A, B, and C, we use \tt GSEPD\_ChangeConditions\rm.
 
 
 <<setup>>=
 isoform_ids <- Name_to_RefSeq(c("GAPDH","HIF1A","EGFR","MYH7","CD33","BRCA2"))
 rows_of_interest <- unique( c( isoform_ids ,
                     sample(rownames(IlluminaBodymap),
-                    size=2000,replace=FALSE)))
+                    size=5000,replace=FALSE)))
 G <- GSEPD_INIT(Output_Folder="OUT",
           finalCounts=round(IlluminaBodymap[rows_of_interest , ]),
           sampleMeta=IlluminaBodymapMeta,
